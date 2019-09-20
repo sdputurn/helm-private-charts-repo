@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "flask-k8s-inspector.fullname" . }}
+  name: {{ include "flask-app-v2.fullname" . }}
   labels:
-{{ include "flask-k8s-inspector.labels" . | indent 4 }}
+{{ include "flask-app-v2.labels" . | indent 4 }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app.kubernetes.io/name: {{ include "flask-k8s-inspector.name" . }}
+      app.kubernetes.io/name: {{ include "flask-app-v2.name" . }}
       app.kubernetes.io/instance: {{ .Release.Name }}
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: {{ include "flask-k8s-inspector.name" . }}
+        app.kubernetes.io/name: {{ include "flask-app-v2.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
     {{- with .Values.imagePullSecrets }}
@@ -26,16 +26,16 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
-              containerPort: 5000
+              containerPort: 80
               protocol: TCP
           livenessProbe:
             httpGet:
               path: /
-              port: 5000
+              port: http
           readinessProbe:
             httpGet:
               path: /
-              port: 5000
+              port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
