@@ -7,7 +7,7 @@ replicaCount: 1
 image:
   repository: sdputurn/flask-k8s-inspector
   tag: latest
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
 
 imagePullSecrets: []
 nameOverride: ""
@@ -23,8 +23,8 @@ ingress:
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: chart-example.local
-      paths: []
+    - host: test-app.192.168.99.14.xip.io
+      paths: [/]
 
   tls: []
   #  - secretName: chart-example-tls
