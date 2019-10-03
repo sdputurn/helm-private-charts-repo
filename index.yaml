@@ -3,7 +3,7 @@ entries:
   flask-app-v2:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-10-03T18:40:41.7641224+05:30"
+    created: "2019-10-03T19:38:48.2513831+05:30"
     description: A Helm chart for Kubernetes
     digest: ec7bb2180c07f8885eca241feb3f8e853835f23675ff8efe400d4cce460809bd
     name: flask-app-v2
@@ -13,11 +13,11 @@ entries:
   flask-k8s-inspector:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-10-03T18:40:41.76512+05:30"
+    created: "2019-10-03T19:38:48.2543733+05:30"
     description: A Helm chart for Kubernetes
-    digest: 8698029c2538ce797672b2f75a8389c4904fd5715445528b5ef37269fa9b2f57
+    digest: 7c0989a828912be85181853b98213d58f486a08dedc9b6d77197c71ddca8491f
     name: flask-k8s-inspector
     urls:
     - flask-k8s-inspector-0.1.0.tgz
     version: 0.1.0
-generated: "2019-10-03T18:40:41.7621285+05:30"
+generated: "2019-10-03T19:38:48.2493865+05:30"
